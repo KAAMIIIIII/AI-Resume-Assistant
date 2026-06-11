@@ -47,9 +47,9 @@ docker-compose up --build
 
 | 变量 | 说明 | 默认值 |
 |------|------|--------|
-| AI_API_URL | AI API 端点 | https://api.openai.com/v1/chat/completions |
+| AI_API_URL | AI API 端点 | `https://api.deepseek.com/chat/completions` |
 | AI_API_KEY | AI API 密钥 | — |
-| AI_MODEL | AI 模型名称 | gpt-4o-mini |
+| AI_MODEL | AI 模型名称 | `deepseek-chat` |
 | SECRET_KEY | JWT 签名密钥 | — |
 | DATABASE_URL | 数据库连接 | sqlite:///./data/resume.db |
 
