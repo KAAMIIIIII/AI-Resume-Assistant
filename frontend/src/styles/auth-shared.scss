@@ -1,0 +1,47 @@
+// 认证页面（Login / Register）共享样式
+// 避免两个页面各自重复 50 行相同 CSS
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--app-gradient);
+}
+
+.auth-card {
+  width: 420px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 32px;
+}
+
+.auth-btn {
+  width: 100%;
+}
+
+.auth-link {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+
+  a {
+    color: #667eea;
+    font-weight: 600;
+  }
+}

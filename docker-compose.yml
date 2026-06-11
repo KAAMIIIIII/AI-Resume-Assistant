@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: resume-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/resume.db
+      - SECRET_KEY=change-me-in-production
+      - AI_API_URL=https://api.openai.com/v1/chat/completions
+      - AI_API_KEY=your-api-key
+      - AI_MODEL=gpt-4o-mini
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: resume-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
