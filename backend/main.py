@@ -26,6 +26,8 @@ app.add_middleware(
         "http://localhost:3000",
         "http://localhost:5173",
         "https://kami-l-ai-resume-diagnosis-kami.vercel.app",
+        "https://ai-resume-assistant-production.up.railway.app",
+        "https://ai-resume-assistant-2clq.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
