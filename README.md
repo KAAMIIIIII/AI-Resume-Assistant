@@ -18,7 +18,7 @@ AI 驱动的简历智能分析平台。上传 PDF 简历，输入目标岗位 JD
 | 前端 | Vue 3 + TypeScript + Pinia + Element Plus + ECharts |
 | 后端 | Python FastAPI + SQLAlchemy + SQLite |
 | AI | DeepSeek / OpenAI 兼容 API |
-| 部署 | Docker + Nginx |
+| 部署 | Vercel + Railway |
 
 ## 快速开始
 
@@ -37,10 +37,21 @@ npm install
 npm run dev
 ```
 
-### Docker 部署
+### 线上部署
+
+本项目的线上部署采用了**Vercel（前端）+ Railway（后端）**的分离架构，详情见下方[部署说明](#部署说明)。
 
 ```bash
-docker-compose up --build
+# 前端部署到 Vercel
+# 1. 在 Vercel 中导入 GitHub 仓库
+# 2. Root Directory 设置为 frontend
+# 3. 添加环境变量 VITE_API_BASE_URL = <Railway 后端地址>
+
+# 后端部署到 Railway
+# 1. 在 Railway 中导入 GitHub 仓库
+# 2. Root Directory 设置为 backend
+# 3. Start Command: uvicorn main:app --host 0.0.0.0 --port 8080
+# 4. 添加环境变量 AI_API_URL, AI_API_KEY, AI_MODEL, SECRET_KEY
 ```
 
 ## 环境变量
